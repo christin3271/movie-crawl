@@ -49,7 +49,7 @@ for i in 13548..13550
         stemized_con = processor.stem(con.content).reject{ |c| c == " " }
 
         stemized_con.each do |stem|
-          unless stem.metadata.pos.to_s == "verb" || stem.metadata.pos.to_s == "adjective"
+          unless stem.metadata.pos.to_s == "noun" || stem.metadata.pos.to_s == "adjective"
             next
           end
           if result_t[stem].nil?
@@ -64,7 +64,7 @@ for i in 13548..13550
   end
 end
 
-result_t.delete_if{ |k,v| v <= 5}
+# result_t.delete_if{ |k,v| v <= 5}
 
 #puts "==================all words===================="
 #puts result.sort_by {|key, value| value}.reverse.to_h.inspect
