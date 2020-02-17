@@ -47,8 +47,6 @@ end
 
 result_t.delete_if{ |k,v| v <= 5}
 
-#puts "==================all words===================="
-#puts result.sort_by {|key, value| value}.reverse.to_h.inspect
 puts "==================영화 #{target_word1} 관련 단어들 ===================="
 r1 = result_t.sort_by {|key, value| value}.reverse.to_h
 puts r1.each { |key, value| puts key}
